@@ -3,33 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Dojo Survey</title>
 </head>
 <body>
 
+    <h1>Dojo Survey</h1>
+
     <div id="outline">
         <form action="">
-            <label>
+            {% csrf_token %}
+            <label>First Name
                 <input type="text", name='first_name'>
             </label>
-            <form action="">
-            <label>
+            <br>
+            <label>Last Name
                 <input type="text", name='last_name'>
             </label>
-            <form action="">
-            <label name='location'>Dojo Location
-                <option value="San Jose">San Jose</option>
-                <option value="Costa Mesa">Costa Mesa</option>
-                <option value="Chicago">Chicago</option>
-                <option value="Burbank">Burbank</option>
+            <br>
+            <label>Dojo Location
+                <select name='location'>
+                    <option value="San Jose">San Jose</option>
+                    <option value="Costa Mesa">Costa Mesa</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Burbank">Burbank</option>
+                </select>
             </label>
-
-            <label name="language">Favorite Language
-                <option value="Java">Java</option>
-                <option value="Python">Python</option>
-                <option value="Mern">Mern</option>
-                <option value="C#">C#</option>
+            <br>
+            <label>Favorite Language
+                <select name="language">
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                    <option value="Mern">Mern</option>
+                    <option value="C#">C#</option>
+                </select>
             </label>
+            <br>
+            <label>Description<br>
+                <textarea name="description" id="" cols="30" rows="10"></textarea>
+            </label>
+            <input type="submit" id="sub" value="Submit">
 
         </form>
 
