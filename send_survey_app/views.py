@@ -14,7 +14,7 @@ def display(request):
         request.session['location']= request.POST['location']
         request.session['language']= request.POST['language']
         request.session['gender']= request.POST['gender']
-        request.session['learned']= request.POST['learned']
+        request.session['learned']= request.POST.getlist('learned[]')
         request.session['description']= request.POST['description']
         return redirect('../result/')
     else:
