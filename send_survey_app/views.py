@@ -14,7 +14,9 @@ def display(request):
             "last_name": request.POST['last_name'],
             'location': request.POST['location'],
             'language': request.POST['language'],
-            'description': request.POST['description']
+            'description': request.POST['description'],
+            'gender': request.POST['gender'],
+            'learned': request.POST['learned'],
             }
         return render (request, "display.html", context)
     

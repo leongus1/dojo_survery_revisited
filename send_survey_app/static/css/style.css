@@ -1,5 +1,6 @@
 *{
-    margin: 15px auto;
+    margin: 10px auto;
+    /* color: red; */
 }
 
 h1{
@@ -22,11 +23,26 @@ textarea{
 }
 
 select, input{
-    margin-left: 20px;
-    text-align: right;
+    margin: 9px;
+    text-align: left;
+    
 }
 
 #sub{
     display: inline;
-    text-align: right;
+    text-align: left;
+}
+
+label > .check{
+    margin: 0px;
+    width: 100%;
+    
+}
+
+p{
+    font-weight: bolder;
+}
+
+span {
+    font-weight: lighter;
 }
