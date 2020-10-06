@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Dojo Survey</title>
 </head>
 <body>
+    <div id="outline">
+        <h2>Submitted Information</h2>
+        <p>Name: <span>{{first_name}} {{last_name}}</span></p> 
+        <p>Dojo Location: <span>{{location}}</span></p>
+        <p>Favorite Language: <span>{{language}}</span> </p> 
+        <p>Description</p>
+        <p>{{description}}</p>
 
-    {{first_name}}
+    </div>
+
+    
     
 </body>
 </html>
