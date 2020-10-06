@@ -1,24 +1,25 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect
 
 def index (request):
-    # if request=="POST":
-    #     context = request.POST
-    #     return render (request, "display.html", context)
-    # else:
-    return render(request, "index.html")
+    if request.method =="POST":
+        print('redirected')
+        return render (request, "display.html")
+    else:
+        return render(request, "index.html")
 
 def display(request):
     if request.method=="POST":
-        context = {
-            "first_name": request.POST['first_name'],
-            "last_name": request.POST['last_name'],
-            'location': request.POST['location'],
-            'language': request.POST['language'],
-            'description': request.POST['description'],
-            'gender': request.POST['gender'],
-            'learned': request.POST['learned'],
-            }
-        return render (request, "display.html", context)
+        request.session["first_name"]= request.POST['first_name']
+        request.session['last_name']= request.POST['last_name']
+        request.session['location']= request.POST['location']
+        request.session['language']= request.POST['language']
+        request.session['gender']= request.POST['gender']
+        request.session['learned']= request.POST['learned']
+        request.session['description']= request.POST['description']
+        return redirect('../result/')
+    else:
+        print('redirected')
+        return render (request, "display.html")
     
         
         

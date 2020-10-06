@@ -9,17 +9,17 @@
 </head>
 <body>
     <div id="outline">
-        <h2>Submitted Information</h2>
-        <p>Name: <span>{{first_name}} {{last_name}}</span></p> 
-        <p>Dojo Location: <span>{{location}}</span></p>
-        <p>Favorite Language: <span>{{language}}</span> </p> 
+        <h2>Submitted Information Revisited</h2>
+        <p>Name: <span>{{request.session.first_name}} {{request.session.last_name}}</span></p> 
+        <p>Dojo Location: <span>{{request.session.location}}</span></p>
+        <p>Favorite Language: <span>{{request.session.language}}</span> </p> 
         
-        <p>Gender: <span>{{gender}}</span></p>
+        <p>Gender: <span>{{request.session.gender}}</span></p>
   
-        <p>What I have learned: <span>{{learned}}</span></p>
+        <p>What I have learned: <span>{{request.session.learned}}</span></p>
        
         <p>Description</p>
-        <p>{{description}}</p>
+        <p>{{request.session.description}}</p>
 
         <a href="/">
             <button>Go Back</button>
